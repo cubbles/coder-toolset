@@ -39,24 +39,14 @@ Now it's yours ... have fun ;-).
     * **Generation of "manifest.webpackage"**: On step of the `build` command is the generation of the `manifest.webpackage` file.\
     We have a top level `manifest.webpackage.js` within the `src` folder and a `manifest.<artifact-type>.js` on artifact level.
 
-1. **Scoped CSS built-in**: The use of `webpack` allows us to easily the scope style definitions in css files. By default the scope is the element itself.
-   ```
-   // scope the "section" class
-   :local(section) {
-    background-color: blue;
-    color: white;
-    font-size: 20px;
-    padding: 20px;
-   ```
-    > Note: Only class selectors are supported.
-    
+1. **Scoped CSS built-in**: The use of `webpack` allows us to easily the scope style definitions in css files. Now by default all css statements are scoped using the name of the webpackage.
 
-## Usage Notes
-### Run `npm` scripts
-In the past the CDT was realized a separate project `cubbles-coder-devtools`. Different tasks had been implemented as `grunt` tasks.
+## Usage Improvements
+### `npm` scripts over `grunt` tasks
+In the past the CDT was realized a separate project `cubbles-coder-devtools`. Different tasks have been implemented based on `grunt`.
 The pain points of this approach were mainly the following:
 * **`grunt` was big**: Grunt comes with many dependencies a developer has to download.
 * **`grunt` was slow**: Executing a grant tasks takes its time.
-* **Updating of the CDT was (too) complicated**: The `cubbles-coder-devtools` are NOT a package you could simply manage as a dependency. It was a `git` repository we mirrored into the webpackage development folder. Initially this was done on project generation time. Afterwards an update of the CDT had to be done by following a guide using `git-subtree`.
+* **updating the CDT was (too) complicated**: The `cubbles-coder-devtools` are NOT a package you could simply manage as a dependency. It was a `git` repository we mirrored into the webpackage development folder. Initially this was done on project generation time. Afterwards an update of the CDT had to be done by following a guide using `git-subtree`.
 
 Now all development supporting tools are managed as dependencies within the `package.json` and can therefore updated by a simple `npm update` on the commandline.
