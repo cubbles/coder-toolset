@@ -1,0 +1,37 @@
+const webpackageName = require('./../../package.json').name;
+
+module.exports = {
+  description: "A simple compound component.",
+  resources: [
+    "element.html"
+  ],
+  dependencies: [
+    { artifactId: `${webpackageName}-elem1` }
+  ],
+  slots: [
+    { slotId: "outerMessage", type: "string", direction: ["input", "output"] }
+  ],
+  // member declarations
+  members: [
+    { artifactId: `${webpackageName}-elem1`, memberId: "first" },
+    { artifactId: `${webpackageName}-elem1`, memberId: "second" }
+  ],
+  // connection declarations
+  connections: [
+    {
+      connectionId: "compound-message-to-first-message",
+      source: { slot: "outerMessage" },
+      destination: { memberIdRef: "first", slot: "message" }
+    },
+    {
+      connectionId: "first-message-to-second-message",
+      source: { memberIdRef: "first", slot: "message" },
+      destination: { memberIdRef: "second", slot: "message" }
+    },
+    {
+      connectionId: "second-message-to-compound-message",
+      source: { memberIdRef: "second", slot: "message" },
+      destination: { slot: "message" }
+    }
+  ]
+};

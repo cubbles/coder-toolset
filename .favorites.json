@@ -1,0 +1,20 @@
+[
+    {
+        "type": "File",
+        "name": "c:\\data\\business\\projects.cubbles\\github\\coder-tools\\package.json",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "5ZzVvbXL3aJtEQIM",
+        "fsPath": "c:\\data\\business\\projects.cubbles\\github\\coder-tools\\package.json"
+    },
+    {
+        "type": "File",
+        "name": "c:\\data\\business\\projects.cubbles\\github\\coder-tools\\coder-template\\package.json",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "NmK9aqRf4kpT31L6",
+        "fsPath": "c:\\data\\business\\projects.cubbles\\github\\coder-tools\\coder-template\\package.json"
+    }
+]

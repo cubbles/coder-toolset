@@ -1,0 +1,9 @@
+{
+    "source": "./_dist",
+    "target": {
+        "url": "http://cubbles.url",
+        "proxy": ""
+    },
+    "debug": false,
+    "dryRun": true
+}

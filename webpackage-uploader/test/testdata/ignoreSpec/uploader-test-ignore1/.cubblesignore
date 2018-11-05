@@ -1,0 +1,10 @@
+# my files
+
+**/*.xxx
+**/tmp.txt
+
+ignoreTest
+
+**/ignoredDir
+
+# end of file
