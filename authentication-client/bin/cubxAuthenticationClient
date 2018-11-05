@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+/* eslint-env node */
+'use strict'
+var authenticationClient = require('../')
+var argv = require('yargs')
+  .usage('Usage: -u [url] -s [stores] [username] [password]')
+  .option('url', {
+    alias: 'u',
+    describe: 'The url of the Base instance.',
+    demand: true
+  })
+  .option('stores', {
+    alias: 's',
+    describe: 'A comma-separated list of stores, the request permissions for.',
+    demand: true
+  })
+  .locale('en')
+  .argv
+
+authenticationClient(argv.u, argv.s, argv._[ 0 ] || undefined, argv._[ 1 ] || undefined, function (err, access_token) {
+  if (err) {
+    console.error(err)
+  } else {
+    console.log('your token:', access_token)
+  }
+})
+
