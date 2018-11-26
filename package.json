@@ -12,17 +12,17 @@
   ],
   "main": "index.js",
   "scripts": {
-    "changed": "lerna changed",
+    "get-changes": "lerna changed",
     "set-version": "lerna version",
-    "publish": "lerna  publish from-git",
+    "do-publish": "lerna publish from-git",
     "test": "echo \"Error: no test specified\" && exit 1",
     "cli": "ntl -d -s 7"
   },
   "ntl": {
     "descriptions": {
-      "changed": "List local packages that have changed since the last tagged release.",
+      "get-changes": "List local packages that have changed since the last tagged release.",
       "set-version": "Bump version of packages changed since the last release.",
-      "publish": "Publish packages in the current project."
+      "do-publish": "Publish packages in the current project."
     }
   },
   "workspaces": [
