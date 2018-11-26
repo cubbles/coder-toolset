@@ -5,7 +5,6 @@
   "private": true,
   "main": "\"\"",
   "scripts": {
-    "cli": "ntl -d -s 7",
     "build": "npm-run-all --serial clean \"_webpack -- -d --config src/webpack.config.js\"",
     "build:watch": "npm-run-all --serial \"_webpack -- -d --config src/webpack.config.js --watch\"",
     "build:prod": "npm-run-all --serial clean \"_webpack -- -p --config src/webpack.config.js\"",
@@ -17,7 +16,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "_serve": "light-server -s dist --proxy https://cubbles.world/sandbox -w \"dist/**\"",
     "_webpack": "webpack",
-    "_open": "wpkg-utils-open"
+    "_open": "wpkg-utils-open",
+    "cli": "ntl -d -s 7"
   },
   "ntl": {
     "descriptions": {
