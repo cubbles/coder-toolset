@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/coder-template",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A template for a cubbles webpackage.",
   "private": true,
   "main": "\"\"",

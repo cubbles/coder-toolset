@@ -1,25 +1,32 @@
 {
   "name": "@cubbles/coder-toolset",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Monorepo for the cubbles coder tools.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "HD Böhlau <boehlau@getrequest.de>",
+  "license": "ISC",
+  "private": true,
   "keywords": [
     "cubbles",
     "monorepo",
     "coder"
   ],
-  "author": "HD Böhlau <boehlau@getrequest.de>",
-  "license": "ISC",
-  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "changed": "lerna changed",
+    "set-version": "lerna version",
+    "publish": "lerna  publish from-git",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cli": "ntl -d -s 7"
+  },
+  "ntl": {
+    "descriptions": {
+      "changed": "List local packages that have changed since the last tagged release.",
+      "set-version": "Bump version of packages changed since the last release.",
+      "publish": "Publish packages in the current project."
+    }
+  },
   "workspaces": [
-    "coder-template",
-    "webpackage-uploader",
-    "authentication-client",
-    "webpackage-document-api",
-    "wpkg-utils"
+    "packages/*"
   ],
   "dependencies": {
     "abbrev": "^1.1.1",
@@ -1195,6 +1202,7 @@
     "yosay": "^2.0.2"
   },
   "devDependencies": {
+    "lerna": "^3.4.3",
     "mocha": "^2.5.3"
   }
 }

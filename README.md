@@ -1,13 +1,33 @@
-# coder-toolset
+# @cubbles/coder-toolset
 Development repo for a set of coder tools - following the monorepo approach.
 It's purpose is to develop and maintain the `code-template` and all related modules.
 
-About yarn workspaces: https://yarnpkg.com/en/docs/workspaces
+## Developer Guide
+### PreRequisites
+#### Yarn
+Follow the install instructions on https://yarnpkg.com.
 
-About yarns focused workspaces: https://yarnpkg.com/blog/2018/05/18/focused-workspaces/
+## Background Knowledge
 
+1. Yarn: https://yarnpkg.com
+   * yarn workspaces: https://yarnpkg.com/en/docs/workspaces
+   * yarns focused workspaces: https://yarnpkg.com/blog/2018/05/18/focused-workspaces/
+1. Lerna: https://lernajs.io
+   * Lerna Commands and more: https://github.com/lerna/lerna#readme
 
+### Setup
+```sh
+# Clone the repo:
+$ git clone https://github.com/cubbles/coder-toolset.git
 
+# Install dependencies
+$ cd coder-toolset && yarn
+```
+
+### Usage
+```sh
+$ yarn cli
+```
 ----
 ## New DevTools? > Background Information
 
