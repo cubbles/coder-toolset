@@ -31,3 +31,4 @@ This requires [ntl](https://github.com/ruyadorno/ntl) to be installed:
 $ npm run cli
 ...
 ```
+> Displays availables scripts. Just select one and press [Enter].
