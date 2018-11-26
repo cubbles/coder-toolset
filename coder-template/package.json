@@ -5,23 +5,37 @@
   "private": true,
   "main": "\"\"",
   "scripts": {
+    "cli": "ntl -d -s 7",
+    "build": "npm-run-all --serial clean \"_webpack -- -d --config src/webpack.config.js\"",
+    "build:watch": "npm-run-all --serial \"_webpack -- -d --config src/webpack.config.js --watch\"",
+    "build:prod": "npm-run-all --serial clean \"_webpack -- -p --config src/webpack.config.js\"",
     "clean": "rimraf ./dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "upload": "upload-webpackage ./cubx-uploader-config.json",
-    "upload:dev": "upload-webpackage ./cubx-uploader-config.dev.json",
-    "build": "npm-run-all --serial clean \"webpack -- -d --config src/webpack.config.js\"",
-    "build:watch": "npm-run-all --serial \"webpack -- -d --config src/webpack.config.js --watch\"",
-    "build:prod": "npm-run-all --serial clean \"webpack -- -p --config src/webpack.config.js\"",
+    "upload": "upload-webpackage ./cubx-uploader-config.dev.json",
+    "upload:prod": "upload-webpackage ./cubx-uploader-config.json",
     "start": "npm-run-all --parallel _serve _open",
     "start:watch": "npm-run-all --parallel build:watch _serve _open",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "_serve": "light-server -s dist --proxy https://cubbles.world/sandbox -w \"dist/**\"",
-    "webpack": "webpack",
+    "_webpack": "webpack",
     "_open": "wpkg-utils-open"
+  },
+  "ntl": {
+    "descriptions": {
+      "build": "Clean the './dist' folder and (re-)build the webpackage from scratch.",
+      "build:watch": "(Re-)build the webpackage on source code changes.",
+      "build:prod": "(Re-)build the webpackage on production mode.",
+      "clean": "Clean the './dist' folder.",
+      "upload:dryRun": "Upload the webpackage - use dev config.",
+      "upload": "Upload the webpackage.",
+      "start": "Open the browser your your locally built webpackage.",
+      "start:watch": "Open the browser your your locally built webpackage and reload on changes."
+    }
   },
   "author": "boehlau@getrequest.de",
   "license": "ISC",
   "devDependencies": {
     "@cubbles/webpackage-uploader": "^3.3.4",
+    "@cubbles/wpkg-utils": "0.1.0",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -61,8 +75,5 @@
   "bugs": {
     "url": "https://github.com/hrbu/hrbu-webpack-poc/issues"
   },
-  "homepage": "https://github.com/hrbu/hrbu-webpack-poc#readme",
-  "dependencies": {
-    "@cubbles/wpkg-utils": "0.1.0"
-  }
+  "homepage": "https://github.com/hrbu/hrbu-webpack-poc#readme"
 }
