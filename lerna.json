@@ -4,5 +4,8 @@
   "packages": [
     "packages/*"
   ],
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "publishConfig": {
+    "access": "public"
+  }
 }
