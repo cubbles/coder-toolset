@@ -37,7 +37,7 @@ Now it's yours ... have fun ;-).
     * **Usage of "webpack"**: For the `build` of a webpackage we make use of `webpack`. Doing so we can use a bunch of helpful functions provided by `webpack` of `webpack plugins`.\
     We have a top level `webpack.config.js` for the webpackage (within the `src` folder) and dedicated `webpack.subconfig.js` files on artifact level. This allows us to design (and modify) the build for each artifact independently.
     * **Generation of "manifest.webpackage"**: On step of the `build` command is the generation of the `manifest.webpackage` file.\
-    We have a top level `manifest.webpackage.js` within the `src` folder and a `manifest.<artifact-type>.js` on artifact level.
+    We have a top level `MANIFEST.webpackage.js` within the `src` folder and a `MANIFEST.<artifact-type>.js` on artifact level.
 
 1. **Scoped CSS built-in**: The use of `webpack` allows us to easily the scope style definitions in css files. Now by default all css statements are scoped using the name of the webpackage.
 

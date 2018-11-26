@@ -1,48 +1,45 @@
 const find = require('find');
 const path = require('path');
-
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const GenerateJsonPlugin = require('generate-json-webpack-plugin');
-const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
-const webpackage = require('./manifest.webpackage');
-const packageScripts = require('../package-scripts');
-const distFolder = path.resolve(__dirname, '../dist', webpackage.name);
-const rootFolder = path.resolve(__dirname, '..');
+// const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
+const wpkgUtils = require('@cubbles/wpkg-utils');
+const distFolder = path.resolve(__dirname, '../dist', wpkgUtils.getWebpackageName);
 
 global.cubx = {
-    distFolder,
-    distFolderWebpackage: distFolder
-}
+  distFolder,
+  distFolderWebpackage: distFolder
+};
 
 const baseConfig = {
     // make this configuration independent from the current working directory
-    context: path.resolve(__dirname),
+  context: path.resolve(__dirname),
     // define the entry module for the bundle to be created
-    entry: `./main.js`,
-    //entry: `./../package-scripts.js`,
-    output: {
-        path: global.cubx.distFolderWebpackage
-    },
-    plugins: [
-        new CopyWebpackPlugin([
-            { from: 'README.md', to: 'README.md',},
-        ], {}),
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-            inject: 'body',
-            // manage placeholders
-            templateParameters: {
-                webpackageName: `${webpackage.name}`,
-                artifactIndex: `${packageScripts.artifactIndex()}`
-            },
-        }),
+  entry: './main.js',
+    // entry: `./../package-scripts.js`,
+  output: {
+    path: global.cubx.distFolderWebpackage
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+            { from: 'README.md', to: 'README.md' }
+    ], {}),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      inject: 'body',
+      // manage placeholders
+      templateParameters: {
+        webpackageName: `${wpkgUtils.getWebpackageName}`,
+        artifactIndex: `${wpkgUtils.generateArtifactsIndex()}`
+      }
+    }),
         // NOTE: The file will re-generated while watching the files.
         // @see https://github.com/webpack/webpack/issues/2919
         // Perhaps ... https://github.com/webpack/webpack/issues/2919#issuecomment-245390239
         // ... https://webpack.js.org/api/compiler-hooks/#watching
-        new GenerateJsonPlugin('manifest.webpackage', require(path.resolve(__dirname, 'manifest.webpackage.js')), null, 2)
-    ],
+    new GenerateJsonPlugin('manifest.webpackage', wpkgUtils.getManifestWebpackage, null, 2)
+  ],
 
     /**
      * This option controls if and how source maps are generated.
@@ -50,30 +47,25 @@ const baseConfig = {
      * Very very useful for development purpose, but should NOT use in production.
      * @see https://survivejs.com/webpack/building/source-maps/#-sourcemapdevtoolplugin-and-evalsourcemapdevtoolplugin-
      */
-    devtool: 'source-map',
+  devtool: 'source-map',
 
     /**
      * If watch is active, after the initial build, webpack will continue to watch for changes in any of the resolved files.
      * @see https://webpack.js.org/configuration/watch/#watch
      */
-    watchOptions: {
-        aggregateTimeout: 300, // the default
-        ignored: /node_modules/
-    }
-}
+  watchOptions: {
+    aggregateTimeout: 300, // the default
+    ignored: /node_modules/
+  }
+};
 
 // collect webpack configuration of artifacts
 const artifactConfigs = [baseConfig];
 const subConfigs = find.fileSync(/webpack\.subconfig.js$/, path.resolve(__dirname));
 subConfigs.forEach(subConfig => {
-    console.log(`Loading subconfig "${subConfig}" ...`)
-    artifactConfigs.push(require(subConfig))
+  console.log(`Loading subconfig "${subConfig}" ...`);
+  artifactConfigs.push(require(subConfig));
 });
 
 // finally define the export
 module.exports = artifactConfigs;
-
-/**
- * ===============================
- * helper functions
- */

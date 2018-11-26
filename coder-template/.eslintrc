@@ -9,10 +9,9 @@
     ]
   },
   "globals": {
+    "CubxComponent": true,
     "require": true,
     "module": true,
-    "Polymer": true,
-    "CubxPolymer": true,
     "describe": true,
     "it": true,
     "before": true,

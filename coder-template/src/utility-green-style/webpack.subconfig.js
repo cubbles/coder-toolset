@@ -1,10 +1,10 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
-const webpackageName = require('../manifest.webpackage').name;
+const wpkgUtils = require('@cubbles/wpkg-utils');
+const webpackageName = wpkgUtils.getWebpackageName;
 const elementName = webpackageName + '-' + __dirname.split(path.sep).pop();
 const distFolder = path.resolve(__dirname, global.cubx.distFolderWebpackage, elementName)
-
 
 const config = {
     // make this configuration independent from the current working directory

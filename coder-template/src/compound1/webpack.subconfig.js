@@ -3,7 +3,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 const path = require('path');
-const webpackageName = require('../manifest.webpackage').name;
+const wpkgUtils = require('@cubbles/wpkg-utils');
+const webpackageName = wpkgUtils.getWebpackageName;
 const elementName = webpackageName + '-' + __dirname.split(path.sep).pop();
 const distFolder = path.resolve(__dirname, global.cubx.distFolderWebpackage, elementName)
 
@@ -65,9 +66,9 @@ const config = {
             },
         }),
         new HtmlWebpackPlugin({
-            template: 'showroom.html',
+            template: 'SHOWROOM.html',
             inject: 'body',
-            filename: 'showroom.html',
+            filename: 'SHOWROOM.html',
             // manage placeholders
             templateParameters: {
                 elementName: elementName,
