@@ -15,7 +15,7 @@
     "get-changes": "lerna changed",
     "set-version": "lerna version",
     "do-publish": "lerna publish from-git",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "lerna run test",
     "cli": "ntl -d -s 7"
   },
   "ntl": {
