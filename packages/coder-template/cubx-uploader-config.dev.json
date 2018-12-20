@@ -1,7 +1,7 @@
 {
-    "source": "./_dist",
+    "source": "./dist",
     "target": {
-        "url": "http://cubbles.url",
+        "url": "http://cubbles.world/sandbox",
         "proxy": ""
     },
     "debug": false,

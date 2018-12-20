@@ -1,5 +1,5 @@
 {
-    "source": "./_dist",
+    "source": "./dist",
     "target": {
         "url": "http://cubbles.url",
         "proxy": ""
