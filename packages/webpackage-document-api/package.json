@@ -16,6 +16,9 @@
     "type": "git",
     "url": "https://github.com/cubbles/cubx-webpackage-document-api.git"
   },
+  "bin": {
+    "validate-manifest": "./bin/WebpackageDocumentValidator.js"
+  },
   "scripts": {
     "generate-docs": "node_modules/.bin/jsdoc.cmd -c jsDocConf.json -R ./README.md",
     "lint": "eslint lib/**/*.js test/**/*.js",
