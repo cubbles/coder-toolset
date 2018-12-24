@@ -33,7 +33,7 @@
     "packages/*"
   ],
   "dependencies": {
-
+    "inquirer": "^6.2.1"
   },
   "devDependencies": {
     "lerna": "^3.4.3",
