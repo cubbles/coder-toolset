@@ -80,11 +80,5 @@
   "bugs": {
     "url": "https://github.com/cubbles/coder-toolset/issues"
   },
-  "homepage": "https://github.com/cubbles/coder-toolset/#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "walk": "^2.3.14"
-  }
+  "homepage": "https://github.com/cubbles/coder-toolset/tree/develop/packages/coder-template#readme"
 }

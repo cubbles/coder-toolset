@@ -1,0 +1,121 @@
+{
+  "name": "cubbles-coder-template",
+  "groupId": "",
+  "version": "1.0.0",
+  "modelVersion": "10.0.0",
+  "docType": "webpackage",
+  "author": {
+    "name": "Hd Böhlau",
+    "email": "fixme@incowia.com"
+  },
+  "license": "ISC",
+  "keywords": [],
+  "man": [],
+  "artifacts": {
+    "apps": [],
+    "compoundComponents": [
+      {
+        "description": "A simple compound component.",
+        "resources": [
+          "element.html"
+        ],
+        "dependencies": [
+          {
+            "artifactId": "cubbles-coder-template-elem1"
+          }
+        ],
+        "slots": [
+          {
+            "slotId": "outerMessage",
+            "type": "string",
+            "direction": [
+              "input",
+              "output"
+            ]
+          }
+        ],
+        "members": [
+          {
+            "artifactId": "cubbles-coder-template-elem1",
+            "memberId": "first"
+          },
+          {
+            "artifactId": "cubbles-coder-template-elem1",
+            "memberId": "second"
+          }
+        ],
+        "connections": [
+          {
+            "connectionId": "compound-message-to-first-message",
+            "source": {
+              "slot": "outerMessage"
+            },
+            "destination": {
+              "memberIdRef": "first",
+              "slot": "message"
+            }
+          },
+          {
+            "connectionId": "first-message-to-second-message",
+            "source": {
+              "memberIdRef": "first",
+              "slot": "message"
+            },
+            "destination": {
+              "memberIdRef": "second",
+              "slot": "message"
+            }
+          },
+          {
+            "connectionId": "second-message-to-compound-message",
+            "source": {
+              "memberIdRef": "second",
+              "slot": "message"
+            },
+            "destination": {
+              "slot": "message"
+            }
+          }
+        ],
+        "artifactId": "cubbles-coder-template-compound1"
+      }
+    ],
+    "elementaryComponents": [
+      {
+        "description": "A simple elementary component.",
+        "slots": [
+          {
+            "slotId": "message",
+            "type": "string",
+            "direction": [
+              "input",
+              "output"
+            ]
+          }
+        ],
+        "resources": [
+          "element.html"
+        ],
+        "dependencies": [
+          {
+            "webpackageId": "cubx.core.rte@3.0.0-SNAPSHOT",
+            "artifactId": "cubxcomponent"
+          },
+          {
+            "artifactId": "cubbles-coder-template-utility-green-style"
+          }
+        ],
+        "artifactId": "cubbles-coder-template-elem1"
+      }
+    ],
+    "utilities": [
+      {
+        "description": "Demo utility",
+        "resources": [
+          "c-util.bundle.js"
+        ],
+        "artifactId": "cubbles-coder-template-utility-green-style"
+      }
+    ]
+  }
+}
