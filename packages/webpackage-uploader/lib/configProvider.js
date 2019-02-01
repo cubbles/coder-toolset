@@ -10,6 +10,8 @@ var _root = process.cwd();
 var HttpsProxyAgent = require('https-proxy-agent');
 var HttpProxyAgent = require('http-proxy-agent');
 var url = require('url');
+const wpkgUtils = require('@cubbles/wpkg-utils');
+
 /**
  * Expose the configProvider
  */
@@ -49,7 +51,7 @@ function ConfigProvider (providedConfig) {
  */
 function _initConfig (providedConfig) {
   var defaultConfig = {
-    source: '.',
+    source: './dist/' + wpkgUtils.getWebpackageName,
     target: {
       url: 'https://www.cubbles.world/sandbox',
       path: '_api/upload',
