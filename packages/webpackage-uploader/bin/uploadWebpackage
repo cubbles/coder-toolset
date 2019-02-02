@@ -1,18 +1,53 @@
 #!/usr/bin/env node
 /* eslint-env node */
 'use strict';
+const Uploader = require('./../lib/uploader');
+const inquirer = require('inquirer');
+const exec = require('child_process').exec;
+
 var argv = require('yargs')
   .usage('Usage: [uploadConfigFile]')
   .demand(1)
   .locale('en')
   .argv;
 
-var Uploader = require('./../lib/uploader');
-(new Uploader()).uploadSingleWebpackage(argv[1], function (err, success) {
-  if (err) {
-    console.error(err);
-    throw Error('Upload failed');
+function uploadWebpackage () {
+  console.log('\x1b[36m', 'Uploading the webpackage...');
+  (new Uploader()).uploadSingleWebpackage(argv[1], function (err, success) {
+    if (err) {
+      console.error('\x1b[31m', 'There was an error building the webpackage.',
+        'Thus, the validation will not be performed');
+      console.error('\x1b[0m', err);
+      throw Error('Upload failed');
+    } else {
+      console.log(success);
+      console.log('\x1b[32m', 'Webpackage uploaded successfully');
+    }
+  });
+};
+
+const question = [{
+  name: 'buildProject',
+  type: 'confirm',
+  message: 'Do you want to build the webpackage before continuing?',
+  default: true
+}];
+
+inquirer.prompt(question).then(function (answer) {
+  if (answer.buildProject) {
+    console.log('\x1b[36m', 'Building the webpackage...');
+    exec('npm run build', function (error, stdout, stderr) {
+      if (error) {
+        console.error('\x1b[31m', 'There was an error building the webpackage.',
+        'Thus, the validation will not be performed', stderr);
+        throw error;
+      } else {
+        console.log('\x1b[0m', stdout);
+        console.log('\x1b[32m', 'Webpackage built successfully');
+        uploadWebpackage();
+      }
+    });
   } else {
-    console.log(success);
+    uploadWebpackage();
   }
 });

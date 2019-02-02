@@ -34,6 +34,7 @@
     "fs": "^0.0.2",
     "http-proxy-agent": "^2.1.0",
     "https-proxy-agent": "^2.2.1",
+    "inquirer": "^6.2.2",
     "lodash": "^4.17.5",
     "mime": "^1.2.11",
     "multi-glob": "1.0.1",

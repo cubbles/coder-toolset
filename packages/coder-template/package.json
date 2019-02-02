@@ -35,8 +35,8 @@
   "author": "boehlau@getrequest.de",
   "license": "ISC",
   "devDependencies": {
-    "@cubbles/webpackage-uploader": "^3.3.6",
     "@cubbles/webpackage-document-api": "^3.4.1",
+    "@cubbles/webpackage-uploader": "^3.3.6",
     "@cubbles/wpkg-utils": "^0.2.0",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
@@ -77,5 +77,6 @@
   "bugs": {
     "url": "https://github.com/hrbu/hrbu-webpack-poc/issues"
   },
-  "homepage": "https://github.com/hrbu/hrbu-webpack-poc#readme"
+  "homepage": "https://github.com/hrbu/hrbu-webpack-poc#readme",
+  "dependencies": {}
 }
