@@ -77,5 +77,8 @@
     "url": "https://github.com/cubbles/coder-toolset/issues"
   },
   "homepage": "https://github.com/cubbles/coder-toolset/#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }

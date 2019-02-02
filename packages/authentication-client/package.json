@@ -49,5 +49,8 @@
   "pre-commit": [
     "lint"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "gitHead": "a7855ed4025785c071cf9fefa65b9d289f0e80e6"
 }
