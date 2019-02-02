@@ -17,21 +17,23 @@
     "do-publish": "lerna publish from-git",
     "show-workspace-dependencies": "yarn workspaces info",
     "test": "lerna run test",
-    "cli": "ntl -d -s 7"
+    "cli": "ntl -d -s 7",
+    "push-coder-template": "node ./utils/push-coder-template.js"
   },
   "ntl": {
     "descriptions": {
       "get-changes": "List local packages that have changed since the last tagged release.",
       "set-version": "Bump version of packages changed since the last release.",
       "do-publish": "Publish packages in the current project.",
-      "show-workspace-dependencies": "Display the workspace dependency tree of your current project."
+      "show-workspace-dependencies": "Display the workspace dependency tree of your current project.",
+      "push-coder-template": "Push the coder-template code to its main repository"
     }
   },
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
-
+    "inquirer": "^6.2.1"
   },
   "devDependencies": {
     "lerna": "^3.4.3",

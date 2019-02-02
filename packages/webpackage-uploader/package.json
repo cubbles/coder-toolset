@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cubbles/coder-tools.git"
+    "url": "https://github.com/cubbles/coder-toolset.git"
   },
   "bin": {
     "upload-webpackage": "./bin/uploadWebpackage"
@@ -24,8 +24,7 @@
     "prepublish": "npm run lint",
     "preversion": "npm run lint",
     "lint": "eslint lib bin test *.js",
-    "start": "node ./bin/upload-webpackage",
-    "test": "mocha"
+    "start": "node ./bin/upload-webpackage"
   },
   "dependencies": {
     "@cubbles/authentication-client": "^1.1.2",
@@ -34,6 +33,7 @@
     "fs": "^0.0.2",
     "http-proxy-agent": "^2.1.0",
     "https-proxy-agent": "^2.2.1",
+    "inquirer": "^6.2.2",
     "lodash": "^4.17.5",
     "mime": "^1.2.11",
     "multi-glob": "1.0.1",
