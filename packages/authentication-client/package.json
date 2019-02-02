@@ -49,8 +49,7 @@
     "start": "npm run test:watch"
   },
   "pre-commit": [
-    "lint",
-    "test"
+    "lint"
   ],
   "gitHead": "a7855ed4025785c071cf9fefa65b9d289f0e80e6"
 }
