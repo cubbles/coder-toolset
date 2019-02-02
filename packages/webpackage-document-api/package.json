@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/webpackage-document-api",
-  "version": "3.4.1",
+  "version": "0.0.0",
   "description": "API for a webpackage document (e.g. the validation functionality)",
   "author": "Judit Ross <judit.ross@incowia.com>",
   "contributors": [

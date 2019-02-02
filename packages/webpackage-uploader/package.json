@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/webpackage-uploader",
-  "version": "3.3.6",
+  "version": "0.0.0",
   "description": "Uploads a single webpackage into a Cubbles Base.",
   "author": "Judit Ross <judit.ross@incowia.com>",
   "contributors": [
