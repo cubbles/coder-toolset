@@ -69,14 +69,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cubbles/cubbles/coder-tools/.git"
+    "url": "git+https://github.com/cubbles/coder-toolset.git"
   },
   "keywords": [
     "new"
   ],
   "bugs": {
-    "url": "https://github.com/cubbles/cubbles/coder-tools/issues"
+    "url": "https://github.com/cubbles/coder-toolset/issues"
   },
-  "homepage": "https://github.com/cubbles/cubbles/coder-tools/#readme",
+  "homepage": "https://github.com/cubbles/coder-toolset/#readme",
   "dependencies": {}
 }
