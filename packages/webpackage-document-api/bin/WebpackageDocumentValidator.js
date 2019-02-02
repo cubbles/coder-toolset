@@ -4,12 +4,12 @@
 const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
+const exec = require('child_process').exec;
 
 const WebpackageDocument = require('../lib/WebpackageDocument');
 const wpkgUtils = require('@cubbles/wpkg-utils');
 const _root = process.env.INIT_CWD;
 const manifestPath = path.resolve(_root, 'dist', wpkgUtils.getWebpackageName, 'manifest.webpackage');
-const exec = require('child_process').exec;
 
 const question = [{
   name: 'buildProject',
@@ -53,11 +53,12 @@ inquirer.prompt(question).then(function (answer) {
     exec('npm run build', function (error, stdout, stderr) {
       if (error) {
         console.error('\x1b[31m', 'There was an error building the webpackage.',
-        'Thus, the validation will not be performed', stderr);
+        'Thus, the validation will not be performed');
+        console.error('\x1b[0m', stderr);
         throw error;
       } else {
         console.log('\x1b[0m', stdout);
-        console.log('\x1b[36m', 'Webpackage built successfully');
+        console.log('\x1b[32m', 'Webpackage built successfully');
         runDocumentValidation();
       }
     });
