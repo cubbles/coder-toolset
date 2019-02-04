@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/coder-template",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A template for a cubbles webpackage.",
   "private": true,
   "main": "\"\"",
@@ -34,9 +34,9 @@
   "author": "boehlau@getrequest.de",
   "license": "ISC",
   "devDependencies": {
-    "@cubbles/webpackage-document-api": "^0.0.0",
-    "@cubbles/webpackage-uploader": "^0.0.0",
-    "@cubbles/wpkg-utils": "^0.0.0",
+    "@cubbles/webpackage-document-api": "^0.1.0",
+    "@cubbles/webpackage-uploader": "^0.1.0",
+    "@cubbles/wpkg-utils": "^0.1.0",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -77,7 +77,6 @@
     "url": "https://github.com/cubbles/coder-toolset/issues"
   },
   "homepage": "https://github.com/cubbles/coder-toolset/#readme",
-  "dependencies": {},
   "publishConfig": {
     "access": "public"
   }
