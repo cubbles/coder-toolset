@@ -27,8 +27,8 @@
     "start": "node ./bin/upload-webpackage"
   },
   "dependencies": {
-    "@cubbles/authentication-client": "^1.1.2",
-    "@cubbles/webpackage-document-api": "^3.4.1",
+    "@cubbles/authentication-client": "^0.0.0",
+    "@cubbles/webpackage-document-api": "^0.0.0",
     "chalk": "~1.1.0",
     "fs": "^0.0.2",
     "http-proxy-agent": "^2.1.0",

@@ -34,9 +34,9 @@
   "author": "boehlau@getrequest.de",
   "license": "ISC",
   "devDependencies": {
-    "@cubbles/webpackage-document-api": "^3.4.1",
-    "@cubbles/webpackage-uploader": "^3.3.6",
-    "@cubbles/wpkg-utils": "^0.2.0",
+    "@cubbles/webpackage-document-api": "^0.0.0",
+    "@cubbles/webpackage-uploader": "^0.0.0",
+    "@cubbles/wpkg-utils": "^0.0.0",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
