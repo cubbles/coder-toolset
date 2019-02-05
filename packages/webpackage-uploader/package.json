@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/webpackage-uploader",
-  "version": "3.3.6",
+  "version": "0.1.0",
   "description": "Uploads a single webpackage into a Cubbles Base.",
   "author": "Judit Ross <judit.ross@incowia.com>",
   "contributors": [
@@ -27,8 +27,8 @@
     "start": "node ./bin/upload-webpackage"
   },
   "dependencies": {
-    "@cubbles/authentication-client": "^1.1.2",
-    "@cubbles/webpackage-document-api": "^3.4.1",
+    "@cubbles/authentication-client": "^0.1.0",
+    "@cubbles/webpackage-document-api": "^0.1.0",
     "chalk": "~1.1.0",
     "fs": "^0.0.2",
     "http-proxy-agent": "^2.1.0",
@@ -55,6 +55,9 @@
     "superagent": "^3.7.0",
     "supercouch": "^0.2.4",
     "time-grunt": "~1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "gitHead": "a7855ed4025785c071cf9fefa65b9d289f0e80e6"
 }

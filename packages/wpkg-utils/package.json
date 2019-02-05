@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/wpkg-utils",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "Utils library for the @cubbles/coder-template",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/cubbles/coder-toolset/et#readme",
   "bin": {
     "wpkg-utils-open": "./bin/open.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
