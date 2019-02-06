@@ -10,6 +10,7 @@
   "main": "./lib/WebpackageDocument.js",
   "files": [
     "lib",
+    "bin",
     "LICENSE"
   ],
   "repository": {
