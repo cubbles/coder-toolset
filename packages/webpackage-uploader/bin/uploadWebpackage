@@ -36,10 +36,14 @@ const question = [{
 inquirer.prompt(question).then(function (answer) {
   if (answer.buildProject) {
     console.log('\x1b[36m', 'Building the webpackage...');
-    exec('npm run build', function (error, stdout, stderr) {
+    var command = 'npm run build';
+    if (argv.p) {
+      command += ':prod';
+    }
+    exec(command, function (error, stdout, stderr) {
       if (error) {
         console.error('\x1b[31m', 'There was an error building the webpackage.',
-        'Thus, the validation will not be performed', stderr);
+          'Thus, the validation will not be performed', stderr);
         throw error;
       } else {
         console.log('\x1b[0m', stdout);
