@@ -3,20 +3,11 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const inquirer = require('inquirer');
-const exec = require('child_process').exec;
 
 const WebpackageDocument = require('../lib/WebpackageDocument');
 const wpkgUtils = require('@cubbles/wpkg-utils');
 const _root = process.env.INIT_CWD;
 const manifestPath = path.resolve(_root, 'dist', wpkgUtils.getWebpackageName, 'manifest.webpackage');
-
-const question = [{
-  name: 'buildProject',
-  type: 'confirm',
-  message: 'Do you want to build the webpackage before continuing?',
-  default: true
-}];
 
 function runDocumentValidation () {
   if (fs.existsSync(manifestPath)) {
@@ -44,25 +35,9 @@ function runDocumentValidation () {
     manifestDoc.validate(onSuccess, onUnsupportedModelVersionError, onValidationError);
   } else {
     console.error('\x1b[31m', 'Manifest not found:', manifestPath, 'was not found.');
+    console.log('\x1b[36m', 'Maybe you haven\'t build the project.' +
+    'Run \'npm run build\' or \'npm run build:prod\' and then try manifest validation again.');
   }
 }
 
-inquirer.prompt(question).then(function (answer) {
-  if (answer.buildProject) {
-    console.log('\x1b[36m', 'Building the webpackage...');
-    exec('npm run build', function (error, stdout, stderr) {
-      if (error) {
-        console.error('\x1b[31m', 'There was an error building the webpackage.',
-        'Thus, the validation will not be performed');
-        console.error('\x1b[0m', stderr);
-        throw error;
-      } else {
-        console.log('\x1b[0m', stdout);
-        console.log('\x1b[32m', 'Webpackage built successfully');
-        runDocumentValidation();
-      }
-    });
-  } else {
-    runDocumentValidation();
-  }
-});
+runDocumentValidation();
