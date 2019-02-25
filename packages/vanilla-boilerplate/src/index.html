@@ -1,0 +1,39 @@
+<!--
+    This is your webpackage index page.
+    Just use it to
+    * demonstrate elements of your webpackage,
+    * evaluate the integration with elements of other webpackages,
+    * test the integration with the dom-api.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= webpackageName %></title>
+    <script src="/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/custom-elements-es5-adapter.js"></script>
+    <script src="/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/webcomponents-lite.js"></script>
+    <script src="/cubx.core.rte@3.0.0-SNAPSHOT/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Showcases of this webpackage</h1>
+        </div>
+        <ul>
+        <%= artifactIndex %>
+
+        </ul>
+        <!-- <travel-planner cubx-webpackage-id="com.incowia.demo.travel-planner@0.3.0-SNAPSHOT">
+        </travel-planner> -->
+        <!-- <cubx-webpackage-viewer cubx-webpackage-id="com.incowia.cubx-webpackage-viewer@1.6.0">
+                <cubx-core-init style="display:none">
+                    <cubx-core-slot-init slot="manifestUrl">"https://cubbles.world/sandbox/com.incowia.demo.travel-planner@0.3.0-SNAPSHOT"</cubx-core-slot-init>
+                </cubx-core-init>
+            </cubx-webpackage-viewer> -->
+    </div>
+</body>
+
+</html>
