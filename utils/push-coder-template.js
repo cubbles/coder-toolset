@@ -3,6 +3,9 @@ var path = require('path');
 var fs = require('fs-extra');
 var inquirer = require('inquirer');
 
+const defaultRepository = 'https://github.com/cubblesmasters/vanilla.git';
+const boilerplatePath = '../packages/vanilla-boilerplate/';
+
 function exec(command, afterCb) {
   shell.exec(command, function (code, stdout, stderr) {
     console.log('Exit code:', code);
@@ -16,7 +19,7 @@ var questions = [{
     name: 'targetRepoUrl',
     type: 'input',
     message: 'Provide the url of the target repository',
-    default: 'https://github.com/cubbles/coder-template.git'
+    default: defaultRepository
   },
   {
     name: 'commitMessage',
@@ -33,7 +36,7 @@ inquirer.prompt(questions).then(function (answers) {
 
 function updateRepository(repoUrl, commitMessage) {
   var tempPath = path.join(__dirname, '../../.temp');
-  var coderTemplatePath = path.join(__dirname, '../packages/coder-template');
+  var coderTemplatePath = path.join(__dirname, boilerplatePath);
   fs.emptyDirSync(tempPath);
 
   // 1. No files history (Only one commit is kept, due to force)
