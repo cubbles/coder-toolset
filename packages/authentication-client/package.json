@@ -44,9 +44,7 @@
     "prepublish": "npm run lint",
     "istanbul": "istanbul cover test/index.js",
     "lint": "eslint bin lib test",
-    "start": "npm run test:watch",
-    "test": "node test/index.js | tap-spec",
-    "test:watch": "gaze 'npm test' 'test/**/*.js' 'lib/**/*.js' 'index.js'"
+    "start": "npm run test:watch"
   },
   "pre-commit": [
     "lint"
