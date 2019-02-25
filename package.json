@@ -18,7 +18,7 @@
     "show-workspace-dependencies": "yarn workspaces info",
     "test": "lerna run test",
     "cli": "ntl -d -s 7",
-    "push-coder-template": "node ./utils/push-coder-template.js"
+    "push-vanilla-boilerplate": "node ./utils/push-vanilla-boilerplate.js"
   },
   "ntl": {
     "descriptions": {
@@ -26,7 +26,7 @@
       "set-version": "Bump version of packages changed since the last release.",
       "do-publish": "Publish packages in the current project.",
       "show-workspace-dependencies": "Display the workspace dependency tree of your current project.",
-      "push-coder-template": "Push the coder-template code to its main repository"
+      "push-vanilla-boilerplate": "Push the vanilla-boilerplate code to its main repository"
     }
   },
   "workspaces": [
