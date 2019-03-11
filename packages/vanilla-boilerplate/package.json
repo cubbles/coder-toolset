@@ -31,7 +31,10 @@
       "start:watch": "Open the browser your your locally built webpackage and reload on changes."
     }
   },
-  "author": "boehlau@getrequest.de",
+  "author": "Hans-Dieter Böhlau <hans-dieter.boehlau@incowia.com>",
+  "contributors": [
+    "Edwin Gamboa <edwingamboa355@gmail.com>"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@cubbles/webpackage-document-api": "^0.1.2",
@@ -71,7 +74,8 @@
     "url": "git+https://github.com/cubbles/coder-toolset.git"
   },
   "keywords": [
-    "new"
+    "vanila boilerplate",
+    "Cubbles"
   ],
   "bugs": {
     "url": "https://github.com/cubbles/coder-toolset/issues"
