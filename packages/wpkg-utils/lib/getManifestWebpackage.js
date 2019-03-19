@@ -37,6 +37,15 @@ if (packageJSON.hasOwnProperty('contributors')) {
   manifest.contributors  = getValidContributors(packageJSON.contributors)
 }
 
+if (packageJSON.hasOwnProperty('cubbles')) {
+  const cubblesProperties = ['groupId', 'man', 'runnables'];
+  cubblesProperties.forEach(function (prop) {
+    if (packageJSON.cubbles.hasOwnProperty(prop)) {
+      manifest[prop]  = packageJSON.cubbles[prop];
+    }
+  });
+}
+
 /*
  * Helper functions
  */
