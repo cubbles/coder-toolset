@@ -23,8 +23,7 @@
   "scripts": {
     "generate-docs": "node_modules/.bin/jsdoc.cmd -c jsDocConf.json -R ./README.md",
     "lint": "eslint lib/**/*.js test/**/*.js",
-    "prepublish": "npm run lint",
-    "test": "mocha"
+    "prepublish": "npm run lint"
   },
   "engines": {
     "node": ">= 0.10.0",
