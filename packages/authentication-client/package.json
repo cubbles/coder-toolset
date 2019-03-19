@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/authentication-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "request a token for client-base-interactions",
   "homepage": "https://github.com/cubbles/coder-toolset/#readme",
   "bugs": "https://github.com/cubbles/coder-toolset/issues",
