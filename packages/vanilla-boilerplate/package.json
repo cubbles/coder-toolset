@@ -80,7 +80,7 @@
   "bugs": {
     "url": "https://github.com/cubbles/coder-toolset/issues"
   },
-  "homepage": "https://github.com/cubbles/coder-toolset/#readme",
+  "homepage": "https://github.com/cubbles/coder-toolset/tree/develop/packages/vanilla-boilerplate#cubblesvanilla-boilerplate",
   "publishConfig": {
     "access": "public"
   },
