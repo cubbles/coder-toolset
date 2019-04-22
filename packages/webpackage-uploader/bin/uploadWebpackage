@@ -4,16 +4,25 @@
 const Uploader = require('./../lib/uploader');
 const inquirer = require('inquirer');
 const exec = require('child_process').exec;
+const packageJSON = require(`${process.env.INIT_CWD}/package.json`);
 
 var argv = require('yargs')
-  .usage('Usage: [uploadConfigFile]')
-  .demand(1)
+  .usage('Usage: [-p for production mode]')
   .locale('en')
   .argv;
 
 function uploadWebpackage () {
+  let mode = argv.p ? 'prod': 'dev';
+  let config;
+  try {
+    config = packageJSON.cubbles['coder-toolset']['cubx-webpackage-uploader'][mode];
+  } catch (e) {
+    console.error('\x1b[31m', `The cubbles['coder-toolset']['cubx-webpackage-uploader']['${mode}'] property is not defined in package.json file`);
+    console.log('\x1b[0m');
+    throw Error('Config not defined');
+  }
   console.log('\x1b[36m', 'Uploading the webpackage...');
-  (new Uploader()).uploadSingleWebpackage(argv[1], function (err, success) {
+  (new Uploader()).uploadSingleWebpackage(config, function (err, success) {
     if (err) {
       console.error('\x1b[31m', 'There was an error building the webpackage.',
         'Thus, the validation will not be performed');

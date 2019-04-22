@@ -9,8 +9,8 @@
     "build:watch": "npm-run-all --serial \"_webpack -- -d --config src/webpack.config.js --watch\"",
     "build:prod": "npm-run-all --serial clean \"_webpack -- -p --config src/webpack.config.js\"",
     "clean": "rimraf ./dist",
-    "upload": "upload-webpackage ./cubx-uploader-config.dev.json",
-    "upload:prod": "upload-webpackage ./cubx-uploader-config.json -p",
+    "upload": "upload-webpackage",
+    "upload:prod": "upload-webpackage -p",
     "validate-manifest": "validate-manifest",
     "start": "npm-run-all --parallel _serve _open",
     "start:watch": "npm-run-all --parallel build:watch _serve _open",
@@ -86,5 +86,27 @@
   },
   "dependencies": {
     "walk": "^2.3.14"
+  },
+  "cubbles": {
+    "coder-toolset": {
+      "cubx-webpackage-uploader": { 
+        "dev": {
+          "target": {
+            "url": "http://cubbles.world/sandbox",
+            "proxy": ""
+          },
+          "debug": false,
+          "dryRun": true
+       },
+       "prod": {
+          "target": {
+            "url": "http://cubbles.world/shared",
+            "proxy": ""
+          },
+          "debug": false,
+          "dryRun": true
+       }
+     }
+    }
   }
 }
