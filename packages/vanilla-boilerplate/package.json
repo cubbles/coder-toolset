@@ -48,6 +48,7 @@
     "css-loader": "^0.28.11",
     "cssnano": "^4.1.7",
     "extra-watch-webpack-plugin": "^1.0.3",
+    "filemanager-webpack-plugin": "^2.0.5",
     "find": "^0.2.9",
     "generate-json-webpack-plugin": "^0.3.1",
     "html-loader": "^0.5.5",
@@ -89,7 +90,7 @@
   },
   "cubbles": {
     "coder-toolset": {
-      "cubx-webpackage-uploader": { 
+      "cubx-webpackage-uploader": {
         "dev": {
           "target": {
             "url": "http://cubbles.world/sandbox",
@@ -97,16 +98,16 @@
           },
           "debug": false,
           "dryRun": true
-       },
-       "prod": {
+        },
+        "prod": {
           "target": {
             "url": "http://cubbles.world/shared",
             "proxy": ""
           },
           "debug": false,
           "dryRun": true
-       }
-     }
+        }
+      }
     }
   }
 }
