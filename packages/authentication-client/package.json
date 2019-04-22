@@ -45,7 +45,8 @@
     "istanbul": "istanbul cover test/index.js",
     "start": "npm run test:watch",
     "lint": "eslint bin lib test",
-    "test:watch": "gaze 'npm test' 'test/**/*.js' 'lib/**/*.js' 'index.js'"
+    "test:watch": "gaze 'npm test' 'test/**/*.js' 'lib/**/*.js' 'index.js'",
+    "test": "node test/index.js | tap-spec"
   },
   "pre-commit": [
     "lint"

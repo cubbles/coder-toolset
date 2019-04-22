@@ -24,7 +24,8 @@
     "prepublish": "npm run lint",
     "preversion": "npm run lint",
     "lint": "eslint lib bin test *.js",
-    "start": "node ./bin/upload-webpackage"
+    "start": "node ./bin/upload-webpackage",
+    "test": "mocha"
   },
   "dependencies": {
     "@cubbles/authentication-client": "^0.1.0",
