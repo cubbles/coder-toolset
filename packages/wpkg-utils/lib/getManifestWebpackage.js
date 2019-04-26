@@ -49,7 +49,6 @@ if (packageJSON.hasOwnProperty('cubbles')) {
 /*
  * Helper functions
  */
-
  function getValidContributors (contributors) {
    return contributors.map(function (contributor) {
     return getValidAuthorObject(contributor);
