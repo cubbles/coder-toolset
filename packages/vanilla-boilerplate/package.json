@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/vanilla-boilerplate",
-  "version": "0.1.7",
+  "version": "0.1.3-SNAPSHOT",
   "description": "A template for a cubbles webpackage.",
   "private": true,
   "main": "\"\"",
@@ -9,8 +9,8 @@
     "build:watch": "npm-run-all --serial \"_webpack -- -d --config src/webpack.config.js --watch\"",
     "build:prod": "npm-run-all --serial clean \"_webpack -- -p --config src/webpack.config.js\"",
     "clean": "rimraf ./dist",
-    "upload": "upload-webpackage ./cubx-uploader-config.dev.json",
-    "upload:prod": "upload-webpackage ./cubx-uploader-config.json -p",
+    "upload": "upload-webpackage",
+    "upload:prod": "upload-webpackage -p",
     "validate-manifest": "validate-manifest",
     "start": "npm-run-all --parallel _serve _open",
     "start:watch": "npm-run-all --parallel build:watch _serve _open",
@@ -48,6 +48,7 @@
     "css-loader": "^0.28.11",
     "cssnano": "^4.1.7",
     "extra-watch-webpack-plugin": "^1.0.3",
+    "filemanager-webpack-plugin": "^2.0.5",
     "find": "^0.2.9",
     "generate-json-webpack-plugin": "^0.3.1",
     "html-loader": "^0.5.5",
@@ -80,11 +81,33 @@
   "bugs": {
     "url": "https://github.com/cubbles/coder-toolset/issues"
   },
-  "homepage": "https://github.com/cubbles/coder-toolset/#readme",
+  "homepage": "https://github.com/cubbles/coder-toolset/tree/develop/packages/vanilla-boilerplate#cubblesvanilla-boilerplate",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "walk": "^2.3.14"
+  },
+  "cubbles": {
+    "coder-toolset": {
+      "cubx-webpackage-uploader": {
+        "dev": {
+          "target": {
+            "url": "http://cubbles.world/sandbox",
+            "proxy": ""
+          },
+          "debug": false,
+          "dryRun": true
+        },
+        "prod": {
+          "target": {
+            "url": "http://cubbles.world/shared",
+            "proxy": ""
+          },
+          "debug": false,
+          "dryRun": true
+        }
+      }
+    }
   }
 }

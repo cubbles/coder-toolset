@@ -43,7 +43,9 @@
   "scripts": {
     "istanbul": "istanbul cover test/index.js",
     "start": "npm run test:watch",
-    "test:watch": "gaze 'npm test' 'test/**/*.js' 'lib/**/*.js' 'index.js'"
+    "lint": "eslint bin lib test",
+    "test:watch": "gaze 'npm test' 'test/**/*.js' 'lib/**/*.js' 'index.js'",
+    "test": "node test/index.js | tap-spec"
   },
   "publishConfig": {
     "access": "public"

@@ -1,4 +1,4 @@
-# @cubbles/coder-template
+# @cubbles/vanilla-boilerplate
 
 > NOTE: Under development. Use it for evaluation purposes only.
 
