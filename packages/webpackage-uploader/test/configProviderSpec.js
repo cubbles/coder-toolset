@@ -12,7 +12,7 @@ describe('configProvider', function () {
     beforeEach(function () {
       root = path.join(process.cwd(), 'test', 'testdata', 'configProviderSpec');
       process.env.npm_config_configPath = path.join(root, 'config1.json');
-      mock('@cubbles/wpkg-utils', { 
+      mock('@cubbles/wpkg-utils', {
         getWebpackageName: 'sample-package'
       });
       var ConfigProvider = require('../lib/configProvider');
