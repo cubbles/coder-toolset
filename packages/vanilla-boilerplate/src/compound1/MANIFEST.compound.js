@@ -7,6 +7,12 @@ module.exports = (webpackageName) => {
     resources: [
       "element.html"
     ],
+    runnables: [
+      {
+        "name": "SHOWROOM",
+        "path": "/SHOWROOM.html"
+      }
+    ],
     dependencies: [
       { artifactId: `${webpackageName}-elem1` }
     ],

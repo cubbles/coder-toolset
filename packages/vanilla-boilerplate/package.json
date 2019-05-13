@@ -105,7 +105,7 @@
             "proxy": ""
           },
           "debug": false,
-          "dryRun": true
+          "dryRun": false
         }
       }
     }

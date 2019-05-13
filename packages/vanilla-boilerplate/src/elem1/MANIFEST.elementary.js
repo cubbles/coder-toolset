@@ -10,6 +10,12 @@ module.exports = (webpackageName) => {
     resources: [
       "element.html"
     ],
+    runnables: [
+      {
+        "name": "SHOWROOM",
+        "path": "/SHOWROOM.html"
+      }
+    ],
     dependencies: [
       { webpackageId: "cubx.core.rte@3.0.0-SNAPSHOT", artifactId: "cubxcomponent" },
       { artifactId: `${webpackageName}-utility-green-style` }
