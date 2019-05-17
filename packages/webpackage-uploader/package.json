@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/webpackage-uploader",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "Uploads a single webpackage into a Cubbles Base.",
   "author": "Judit Ross <judit.ross@incowia.com>",
   "contributors": [
@@ -28,8 +28,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@cubbles/authentication-client": "^0.1.3",
-    "@cubbles/webpackage-document-api": "^0.1.3",
+    "@cubbles/authentication-client": "^0.1.4",
+    "@cubbles/webpackage-document-api": "^0.2.0",
     "chalk": "~1.1.0",
     "fs": "^0.0.2",
     "http-proxy-agent": "^2.1.0",
