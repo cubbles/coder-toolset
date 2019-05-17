@@ -38,7 +38,7 @@ if (packageJSON.hasOwnProperty('contributors')) {
 }
 
 if (packageJSON.hasOwnProperty('cubbles')) {
-  const cubblesProperties = ['groupId', 'man', 'runnables'];
+  const cubblesProperties = ['groupId', 'man', 'runnables', 'modelVersion'];
   cubblesProperties.forEach(function (prop) {
     if (packageJSON.cubbles.hasOwnProperty(prop)) {
       manifest[prop]  = packageJSON.cubbles[prop];
