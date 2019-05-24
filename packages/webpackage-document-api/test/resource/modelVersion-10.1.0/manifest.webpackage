@@ -1,6 +1,5 @@
 {
     "name": "my-webpackage",
-    "groupId": "org.example",
     "version": "0.2.0",
     "modelVersion": "10.1.0",
     "docType": "webpackage",
@@ -42,7 +41,7 @@
                         "artifactId": "my-compound"
                     },
                     {
-                        "webpackageId": "com.incowia.cubx-webpackage-viewer@1.2.0",
+                        "webpackageId": "cubx-webpackage-viewer@1.2.0",
                         "artifactId": "cubx-component-docs-viewer",
                         "endpointId": "main"
                     }
@@ -62,34 +61,34 @@
                         "artifactId": "bar-chart"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component1"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component2"
                     },
                     {
-                        "webpackageId": "com.incowia.basic-html-components@0.1.0-SNAPSHOT",
+                        "webpackageId": "basic-html-components@0.1.0-SNAPSHOT",
                         "artifactId": "cubx-date-input",
                         "endpointId": "main"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.1",
+                        "webpackageId": "demos-aviator@1.1",
                         "artifactId": "component-2"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.1",
+                        "webpackageId": "demos-aviator@1.1",
                         "artifactId": "generic"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.1",
+                        "webpackageId": "demos-aviator@1.1",
                         "artifactId": "station-view"
                     }
                 ],
                 "dependencyExcludes": [
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component-2"
                     }
                 ],
@@ -199,28 +198,28 @@
                         "artifactId": "bar-chart"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component1"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component2"
                     },
                     {
-                        "webpackageId": "com.incowia.basic-html-components@0.1.0-SNAPSHOT",
+                        "webpackageId": "basic-html-components@0.1.0-SNAPSHOT",
                         "artifactId": "cubx-date-input",
                         "endpointId": "main"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.1",
+                        "webpackageId": "demos-aviator@1.1",
                         "artifactId": "component-2"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.1",
+                        "webpackageId": "demos-aviator@1.1",
                         "artifactId": "generic"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.1",
+                        "webpackageId": "demos-aviator@1.1",
                         "artifactId": "station-view"
                     }
                 ],
@@ -343,11 +342,11 @@
                         "endpointId": "asdeasd"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component-1"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component-2"
                     },
                     {
@@ -390,11 +389,11 @@
                         "endpointId": "asdeasd"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component-1"
                     },
                     {
-                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "webpackageId": "demos-aviator@1.0",
                         "artifactId": "component-2"
                     },
                     {
@@ -445,13 +444,13 @@
                         "artifactId": "bar-chart"
                     },
                     {
-                        "webpackageId": "jquery2.1.0@1.0",
+                        "webpackageId": "jquery2-1-0@1.0",
                         "artifactId": "jquery"
                     }
                 ],
                 "dependencyExcludes": [
                     {
-                        "webpackageId": "jquery2.0.0@1.0",
+                        "webpackageId": "jquery2-0-0@1.0",
                         "artifactId": "jquery"
                     }
                 ]
