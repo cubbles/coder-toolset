@@ -1,6 +1,6 @@
 {
   "name": "@cubbles/vanilla-boilerplate",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A template for a cubbles webpackage.",
   "private": true,
   "main": "\"\"",
@@ -37,8 +37,8 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "@cubbles/webpackage-document-api": "^0.2.0",
-    "@cubbles/webpackage-uploader": "^0.1.7",
+    "@cubbles/webpackage-document-api": "^0.2.1",
+    "@cubbles/webpackage-uploader": "^0.1.8",
     "@cubbles/wpkg-utils": "^0.2.0",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
