@@ -5,9 +5,8 @@ const webpackageName = require('./getWebpackageName');
 
 const manifest = {
   name: webpackageName,
-  groupId: '',
   version: packageJSON.version,
-  modelVersion: '10.0.0',
+  modelVersion: '10.1.0',
   docType: 'webpackage',
   author: getValidAuthorObject(packageJSON.author),
   license: packageJSON.license,
