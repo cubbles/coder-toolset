@@ -109,6 +109,7 @@ function addDocument (db, doc, next) {
 }
 
 before(function (done) {
+  this.timeout(6000);
   // function: create a test user
   console.log('before ....');
 

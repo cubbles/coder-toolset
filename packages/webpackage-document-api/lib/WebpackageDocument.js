@@ -55,7 +55,8 @@
    * @param {function} onValidationError callback with an array of validationErrors as paramter
    */
   WebpackageDocument.prototype.generateId = function (onSuccess, onUnsupportedModelVersionError, onValidationError) {
-    var id = this.document.groupId + '.' + this.document.name + '@' + this.document.version;
+    var groupId = this.document.groupId ? this.document.groupId: '';
+    var id = groupId + '.' + this.document.name + '@' + this.document.version;
     // if groupId is empty
     while (id.charAt(0) === '.') {
       id = id.substr(1);
