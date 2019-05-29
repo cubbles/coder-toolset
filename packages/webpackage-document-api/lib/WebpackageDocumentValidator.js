@@ -410,7 +410,9 @@
     };
 
     // run rule functions
-    runPackageGroupIdRule();
+    if (this._modelVersionIsLowerThan(doc.modelVersion, '10.1')) {
+      runPackageGroupIdRule();
+    }
     runUniqueArtifactIdRule();
     runCompoundUniqueSlotIdRule();
     runCompoundUniqueMemberIdRule();
@@ -453,6 +455,13 @@
       throw new TypeError('Parameter doc must be a Json String or an object.');
     }
     return obj;
+  };
+  WebpackageDocumentValidator._modelVersionIsLowerThan = function (modelVersion, refVersion) {
+    var completeRefVersion = this._getCompleteVersionNumber(refVersion);
+    var refNumber = this._changeVersionInNumber(completeRefVersion);
+    var completeModelVersion = this._getCompleteVersionNumber(modelVersion);
+    var modelNumber = this._changeVersionInNumber(completeModelVersion);
+    return modelNumber < refNumber;
   };
   WebpackageDocumentValidator._modelVersionValid = function (minVersion, modelVersion) {
     var completeRefVersion = this._getCompleteVersionNumber(minVersion);
