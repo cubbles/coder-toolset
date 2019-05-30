@@ -709,7 +709,7 @@
 				"webpackageId": {
 					"description": "The webpackagId of the dependency. This property is optional. Absent webpacakgeId implies, that the dependency is in the current webpackage.",
 					"type": "string",
-					"pattern": "^[a-z0-9]+(-[a-z0-9]+)+[@](\\d+)(\\.[\\d]+)*(-SNAPSHOT)?$"
+					"pattern": "^([a-z0-9]+|([a-z0-9]+[a-z0-9-][a-z0-9]+)*)([\\.|-]([a-z0-9]+|([a-z0-9]+[a-z0-9-][a-z0-9]+)*))*[@](\\d+)(\\.[\\d]+)*(-SNAPSHOT)?$"
 				},
 				"endpointId": {
 					"description": "THe endpointId of the dependency. This property should be used only for dependencies with modelVersion < 9.0.",

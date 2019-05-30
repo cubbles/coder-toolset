@@ -440,7 +440,7 @@
                 ],
                 "dependencies": [
                     {
-                        "webpackageId": "d3-charts-lib@1.0",
+                        "webpackageId": "abc.com.d3-charts-lib@1.0",
                         "artifactId": "bar-chart"
                     },
                     {
