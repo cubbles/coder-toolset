@@ -4,8 +4,11 @@ var path = require('path');
 var assert = require('assert');
 var mock = require('mock-require');
 
+var webpackageName = 'test-wpkg';
+
 describe('configProvider', function () {
   var init;
+
   describe('#getConfig()', function () {
     var root;
 
@@ -16,7 +19,7 @@ describe('configProvider', function () {
         getWebpackageName: 'sample-package'
       });
       var ConfigProvider = require('../lib/configProvider');
-      init = new ConfigProvider();
+      init = new ConfigProvider(undefined, webpackageName);
     });
 
     it('should be an object', function () {
@@ -45,7 +48,7 @@ describe('configProvider', function () {
       root = path.join(process.cwd(), 'test', 'testdata', 'configProviderSpec');
       process.env.npm_config_configPath = path.join(root, 'config2.json');
       var ConfigProvider = require('../lib/configProvider');
-      init = new ConfigProvider();
+      init = new ConfigProvider(undefined, webpackageName);
     });
 
     it('should be the specified format', function () {

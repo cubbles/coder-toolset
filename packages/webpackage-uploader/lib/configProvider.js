@@ -10,7 +10,6 @@ var _root = process.cwd();
 var HttpsProxyAgent = require('https-proxy-agent');
 var HttpProxyAgent = require('http-proxy-agent');
 var url = require('url');
-const wpkgUtils = require('@cubbles/wpkg-utils');
 
 /**
  * Expose the configProvider
@@ -22,8 +21,9 @@ module.exports = ConfigProvider;
  * @alias module:init.getConfig
  * @returns  {object} the configuration object
  */
-function ConfigProvider (providedConfig) {
+function ConfigProvider (providedConfig, webpackageName) {
   this.providedConfig = providedConfig;
+  this.webpackageName = webpackageName;
 
   this.getProvidedConfigObject = function () {
     if (this.providedConfig && typeof this.providedConfig === 'object') {
@@ -40,7 +40,7 @@ function ConfigProvider (providedConfig) {
   };
 
   this.getConfig = function () {
-    return _initConfig(this.getProvidedConfigObject());
+    return _initConfig(this.getProvidedConfigObject(), this.webpackageName);
   };
 }
 
@@ -49,9 +49,9 @@ function ConfigProvider (providedConfig) {
  * @param {object} providedConfig - content of configFileconfigFileData
  * @returns {{nano: Object, path: Object, db: string}}
  */
-function _initConfig (providedConfig) {
+function _initConfig (providedConfig, webpackageName) {
   var defaultConfig = {
-    source: './dist/' + wpkgUtils.getWebpackageName,
+    source: './dist/' + webpackageName,
     target: {
       url: 'https://www.cubbles.world/sandbox',
       path: '_api/upload',

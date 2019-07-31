@@ -5,6 +5,7 @@ const Uploader = require('./../lib/uploader');
 const inquirer = require('inquirer');
 const exec = require('child_process').exec;
 const packageJSON = require(`${process.env.INIT_CWD}/package.json`);
+const wpkgUtils = require('@cubbles/wpkg-utils');
 
 var argv = require('yargs')
   .usage('Usage: [-p for production mode]')
@@ -14,6 +15,7 @@ var argv = require('yargs')
 function uploadWebpackage () {
   let mode = argv.p ? 'prod': 'dev';
   let config;
+  let webpackageName = wpkgUtils.getWebpackageName;
   try {
     config = packageJSON.cubbles['coder-toolset']['cubx-webpackage-uploader'][mode];
   } catch (e) {
@@ -21,8 +23,8 @@ function uploadWebpackage () {
     console.log('\x1b[0m');
     throw Error('Config not defined');
   }
-  console.log('\x1b[36m', 'Uploading the webpackage...');
-  (new Uploader()).uploadSingleWebpackage(config, function (err, success) {
+  console.log('\x1b[36m', `Uploading the ${webpackageName} webpackage...`);
+  (new Uploader(webpackageName)).uploadSingleWebpackage(config, function (err, success) {
     if (err) {
       console.error('\x1b[31m', 'There was an error building the webpackage.',
         'Thus, the validation will not be performed');

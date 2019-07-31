@@ -4,12 +4,13 @@ var assert = require('assert');
 var _ = require('lodash');
 var testdata = require('./testdata/userdata.js');
 var uploader;
+var webpackageName = 'test-wpkg';
 
 describe('uploader', function () {
   var defaults;
   beforeEach(function () {
     var Uploader = require('../lib/uploader');
-    uploader = new Uploader();
+    uploader = new Uploader(webpackageName);
   });
   describe('without proxy', function () {
     beforeEach(function () {

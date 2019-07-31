@@ -17,8 +17,9 @@ var ConfigProvider = require('./../lib/configProvider');
 
 module.exports = Uploader;
 
-function Uploader () {
+function Uploader (webpackageName) {
   this.resolvedConfigObject;
+  this.webpackageName = webpackageName;
 }
 
 /**
@@ -35,7 +36,7 @@ Uploader.prototype.uploadSingleWebpackage = function (passedConfig, done) {
   }
 
   // Now create (-internal) configObject.
-  configProvider = new ConfigProvider(passedConfig);
+  configProvider = new ConfigProvider(passedConfig, this.webpackageName);
   this.resolvedConfigObject = configProvider.getConfig();
   // Set the env.http_proxy according to the passed upload configuration.
   if (configProvider.getProvidedConfigObject().target.proxy) {

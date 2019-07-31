@@ -7,9 +7,10 @@ var uploader;
 
 describe('ignoreSpec', function () {
   var defaults;
+  var webpackageName = 'test-wpkg';
   beforeEach(function () {
     var Uploader = require('../lib/uploader');
-    uploader = new Uploader();
+    uploader = new Uploader(webpackageName);
     defaults = {
       'access_credentials': {
         'user': testdata.users.user1.logins.local.login,
