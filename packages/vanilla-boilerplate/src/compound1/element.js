@@ -1,1 +1,1 @@
-import styles from './element.sss'
+import './element.sss';

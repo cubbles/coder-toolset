@@ -11,14 +11,6 @@
   "globals": {
     "CubxComponent": true,
     "require": true,
-    "module": true,
-    "describe": true,
-    "it": true,
-    "before": true,
-    "beforeEach": true,
-    "after": true,
-    "afterEach": true,
-    "expect": true,
-    "sinon": true
+    "module": true
   }
 }

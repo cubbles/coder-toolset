@@ -14,17 +14,17 @@ global.cubx = {
 };
 
 const baseConfig = {
-    // make this configuration independent from the current working directory
+  // make this configuration independent from the current working directory
   context: path.resolve(__dirname),
-    // define the entry module for the bundle to be created
+  // define the entry module for the bundle to be created
   entry: './main.js',
-    // entry: `./../package-scripts.js`,
+  // entry: `./../package-scripts.js`,
   output: {
     path: global.cubx.distFolderWebpackage
   },
   plugins: [
     new CopyWebpackPlugin([
-            { from: 'README.md', to: 'README.md' }
+      { from: 'README.md', to: 'README.md' }
     ], {}),
     new HtmlWebpackPlugin({
       template: 'index.html',
@@ -35,10 +35,10 @@ const baseConfig = {
         artifactIndex: `${wpkgUtils.generateArtifactsIndex()}`
       }
     }),
-        // NOTE: The file will re-generated while watching the files.
-        // @see https://github.com/webpack/webpack/issues/2919
-        // Perhaps ... https://github.com/webpack/webpack/issues/2919#issuecomment-245390239
-        // ... https://webpack.js.org/api/compiler-hooks/#watching
+    // NOTE: The file will re-generated while watching the files.
+    // @see https://github.com/webpack/webpack/issues/2919
+    // Perhaps ... https://github.com/webpack/webpack/issues/2919#issuecomment-245390239
+    // ... https://webpack.js.org/api/compiler-hooks/#watching
     new GenerateJsonPlugin('manifest.webpackage', wpkgUtils.getManifestWebpackage, null, 2),
     new FileManagerPlugin({
       onEnd: {
@@ -47,13 +47,13 @@ const baseConfig = {
             source: path.resolve(__dirname),
             destination: path.join(distFolder, `${wpkgUtils.getWebpackageName}.tar.gz`),
             format: 'tar'
-          },
+          }
         ]
       }
     })
   ],
 
-    /**
+  /**
      * This option controls if and how source maps are generated.
      * With this feature, we know exactly where to look in order to fix/debug issues in our application.
      * Very very useful for development purpose, but should NOT use in production.
@@ -61,7 +61,7 @@ const baseConfig = {
      */
   devtool: 'source-map',
 
-    /**
+  /**
      * If watch is active, after the initial build, webpack will continue to watch for changes in any of the resolved files.
      * @see https://webpack.js.org/configuration/watch/#watch
      */

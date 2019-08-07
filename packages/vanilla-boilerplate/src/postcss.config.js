@@ -8,11 +8,11 @@
  */
 
 module.exports = {
-    parser: 'sugarss',
-    plugins: {
-      'postcss-import': {},
-      'postcss-preset-env': {},
-      'autoprefixer': {},
-      'cssnano': {}
-    }
+  parser: 'sugarss',
+  plugins: {
+    'postcss-import': {},
+    'postcss-preset-env': {},
+    autoprefixer: {},
+    cssnano: {}
   }
+};
