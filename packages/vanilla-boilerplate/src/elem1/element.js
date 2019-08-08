@@ -1,4 +1,4 @@
-import css from './element.sss';
+import  './element.sss';
 
 (function () {
   'use strict';
