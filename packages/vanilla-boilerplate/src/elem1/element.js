@@ -1,4 +1,4 @@
-import css from './element.sss'
+import  './element.sss';
 
 (function () {
   'use strict';
@@ -17,8 +17,8 @@ import css from './element.sss'
      * Manipulate an element’s local DOM when the element is created and initialized.
      */
     ready: function () {
-      let input = this.querySelector('#slotMessage');
-      input.addEventListener('change', function(event) {
+      const input = this.querySelector('#slotMessage');
+      input.addEventListener('change', function (event) {
         this.setMessage(event.target.value);
       }.bind(this));
     },
@@ -45,8 +45,8 @@ import css from './element.sss'
      *  Observe the Cubbles-Component-Model: If value for slot 'slotName' has changed ...
      */
     modelMessageChanged: function (newValue) {
-      console.log(`${newValue} changed`)
-      let input = this.querySelector('#slotMessage');
+      console.log(`${newValue} changed`);
+      const input = this.querySelector('#slotMessage');
       input.value = newValue;
     }
   });

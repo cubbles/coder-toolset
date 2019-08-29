@@ -8,9 +8,9 @@ const elementName = webpackageName + '-' + __dirname.split(path.sep).pop();
 const distFolder = path.resolve(__dirname, global.cubx.distFolderWebpackage, elementName);
 
 const config = {
-    // make this configuration independent from the current working directory
+  // make this configuration independent from the current working directory
   context: path.resolve(__dirname),
-    // define the entry module for the bundle to be created
+  // define the entry module for the bundle to be created
   entry: './element.js',
   output: {
     path: distFolder,
@@ -18,65 +18,65 @@ const config = {
   },
   module: {
     rules: [
-        {
-                // manage placeholdes in js files
-          test: /\.js$/,
-          use: [
-                    { loader: `preprocess-loader?elementName=${elementName}` }
-            ]
-        },
-        {
-          test: /\.sss$/,
-          use: [
-              {
-                loader: 'style-loader',
-                options: {
-                      hmr: false
-                    }
-              },
-              {
-                loader: 'css-loader',
-                options: {
-                      modules: true,
-                      importLoaders: 1,
-                      localIdentName: `${webpackageName}_[local]`
-                    }
-              },
-              {
-                loader: 'postcss-loader'
-              }
-            ]
-        }
-      ]
+      {
+        // manage placeholdes in js files
+        test: /\.js$/,
+        use: [
+          { loader: `preprocess-loader?elementName=${elementName}` }
+        ]
+      },
+      {
+        test: /\.sss$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              hmr: false
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: `${webpackageName}_[local]`
+            }
+          },
+          {
+            loader: 'postcss-loader'
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new CopyWebpackPlugin([
-            { from: '**/*.md', to: distFolder }
-      ], {}),
+      { from: '**/*.md', to: distFolder }
+    ], {}),
     new HtmlWebpackPlugin({
-        template: 'element.html',
-        inject: 'body',
-        filename: 'element.html',
-            // manage placeholders
-        templateParameters: {
-            webpackageName: `${webpackageName}`,
-            elementName: `${elementName}`
-          }
-      }),
+      template: 'element.html',
+      inject: 'body',
+      filename: 'element.html',
+      // manage placeholders
+      templateParameters: {
+        webpackageName: `${webpackageName}`,
+        elementName: `${elementName}`
+      }
+    }),
     new HtmlWebpackPlugin({
-        template: 'SHOWROOM.html',
-        filename: 'SHOWROOM.html',
-            // manage placeholders
-        templateParameters: {
-            webpackageName: `${webpackageName}`,
-            elementName: `${elementName}`
-          }
-      }),
+      template: 'SHOWROOM.html',
+      filename: 'SHOWROOM.html',
+      // manage placeholders
+      templateParameters: {
+        webpackageName: `${webpackageName}`,
+        elementName: `${elementName}`
+      }
+    }),
     new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        reportFilename: 'bundleReport.html',
-        openAnalyzer: false
-      })
+      analyzerMode: 'static',
+      reportFilename: 'bundleReport.html',
+      openAnalyzer: false
+    })
   ]
 };
 module.exports = config;

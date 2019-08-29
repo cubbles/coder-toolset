@@ -13,7 +13,7 @@ const manifest = {
   keywords: [],
   man: [],
   artifacts: {
-    apps: [],
+    apps: getSubManifests('app'),
     compoundComponents: getSubManifests('compound'),
     elementaryComponents: getSubManifests('elementary'),
     utilities: getSubManifests('utility')
